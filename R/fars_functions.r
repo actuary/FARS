@@ -116,7 +116,7 @@ fars_summarize_years <- function(years) {
 #'
 #' This function reads in the FARs data and plots the given state with each accident
 #' represented by a black dot on the plot. User should be careful that the state number
-#' exists in the data and that there are accidents for that state, otherwise
+#' exists in the data and that there are accidents for that state, otherwise slight change
 #' will give a warning.
 #'
 #' @param state.num This is the number of a state. Should be valid
