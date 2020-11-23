@@ -48,7 +48,7 @@ fars_read <- function(filename) {
 #'
 make_filename <- function(year) {
   year <- as.integer(year)
-  sprintf("accident_%d.csv.bz2", year)
+  sprintf("daccident_%d.csv.bz2", year)
 }
 #' Read FARs data for years
 #'
@@ -64,8 +64,9 @@ make_filename <- function(year) {
 #' @keywords FARS
 #'
 #' @examples
+#' \dontrun{
 #' fars_read_years(c("2013", "2014", "2015"))
-#'
+#' }
 #' @export
 #' @importFrom magrittr %>%
 #' @importFrom dplyr mutate select
@@ -98,8 +99,9 @@ fars_read_years <- function(years) {
 #' @keywords FARS
 #'
 #' @examples
+#' \dontrun{
 #' fars_summarize_years(c("2013", "2014", "2015"))
-#'
+#' }
 #' @export
 #' @importFrom magrittr %>%
 #' @importFrom dplyr tbl_df n group_by bind_rows summarize
@@ -127,9 +129,10 @@ fars_summarize_years <- function(years) {
 #' @keywords FARS
 #'
 #' @examples
+#' \dontrun{
 #' fars_map_state(1, 2013)
 #' fars_map_state(4, 2013)
-#'
+#' }
 #' @export
 #' @importFrom dplyr filter
 #' @importFrom graphics points
