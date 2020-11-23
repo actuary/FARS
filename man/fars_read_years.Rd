@@ -12,7 +12,7 @@ fars_read_years(years)
 \value{
 This function returns a list of FARS data for
     each year, if the data is found. NULL is returned
-    for entries that are not found.
+    for entries that are not found, along with a warning.
 }
 \description{
 This function loads in FARS data for multiple years.
