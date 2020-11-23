@@ -1,3 +1,5 @@
+
+utils::globalVariables(c(".data"))
 #' Read FARS data
 #'
 #' This function reads in FARS from the given file path,
@@ -13,10 +15,11 @@
 #' @keywords FARS
 #'
 #' @examples
+#' \dontrun{
 #' fars_read("data\\accident_2013.csv.bz2")
 #' fars_read("data\\accident_2014.csv.bz2")
 #' fars_read("data\\accident_2015.csv.bz2")
-#'
+#' }
 #' @importFrom readr read_csv
 #' @importFrom dplyr tbl_df
 fars_read <- function(filename) {
@@ -42,9 +45,11 @@ fars_read <- function(filename) {
 #' @keywords FARS
 #'
 #' @examples
+#' \dontrun{
 #' make_filename("2013")
 #' make_filename("2014")
 #' make_filename("2015")
+#' }
 #'
 make_filename <- function(year) {
   year <- as.integer(year)
@@ -76,7 +81,7 @@ fars_read_years <- function(years) {
     tryCatch({
       dat <- fars_read(file)
       dplyr::mutate(dat, year = year) %>%
-        dplyr::select(MONTH, year)
+        dplyr::select(.data$MONTH, year)
     }, error = function(e) {
       warning("invalid year: ", year)
       return(NULL)
@@ -109,9 +114,9 @@ fars_read_years <- function(years) {
 fars_summarize_years <- function(years) {
   dat_list <- fars_read_years(years)
   dplyr::bind_rows(dat_list) %>%
-    dplyr::group_by(year, MONTH) %>%
+    dplyr::group_by(.data$year, .data$MONTH) %>%
     dplyr::summarize(n = n()) %>%
-    tidyr::spread(year, n)
+    tidyr::spread(.data$year, n)
 }
 #' Plot FARS data for given state and year
 #'
@@ -144,7 +149,7 @@ fars_map_state <- function(state.num, year) {
 
   if(!(state.num %in% unique(data$STATE)))
     stop("invalid STATE number: ", state.num)
-  data.sub <- dplyr::filter(data, STATE == state.num)
+  data.sub <- dplyr::filter(data, .data$STATE == state.num)
   if(nrow(data.sub) == 0L) {
     message("no accidents to plot")
     return(invisible(NULL))

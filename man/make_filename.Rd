@@ -18,9 +18,11 @@ This function returns a string representing the
 This function generates a file name for FARs data.
 }
 \examples{
+\dontrun{
 make_filename("2013")
 make_filename("2014")
 make_filename("2015")
+}
 
 }
 \author{

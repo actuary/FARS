@@ -20,8 +20,9 @@ This function reads in and then summarises the FARs data into
 number of observations by month and year
 }
 \examples{
+\dontrun{
 fars_summarize_years(c("2013", "2014", "2015"))
-
+}
 }
 \author{
 John J Smith, \email{fakeemail123@duvman.ie}

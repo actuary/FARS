@@ -18,8 +18,9 @@ This function returns a list of FARS data for
 This function loads in FARS data for multiple years.
 }
 \examples{
+\dontrun{
 fars_read_years(c("2013", "2014", "2015"))
-
+}
 }
 \author{
 John J Smith, \email{fakeemail123@duvman.ie}

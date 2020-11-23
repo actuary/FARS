@@ -19,10 +19,11 @@ This function reads in FARS from the given file path,
 if it exists.
 }
 \examples{
+\dontrun{
 fars_read("data\\\\accident_2013.csv.bz2")
 fars_read("data\\\\accident_2014.csv.bz2")
 fars_read("data\\\\accident_2015.csv.bz2")
-
+}
 }
 \author{
 John J Smith, \email{fakeemail123@duvman.ie}

@@ -21,9 +21,10 @@ exists in the data and that there are accidents for that state, otherwise slight
 will give a warning.
 }
 \examples{
+\dontrun{
 fars_map_state(1, 2013)
 fars_map_state(4, 2013)
-
+}
 }
 \author{
 John J Smith, \email{fakeemail123@duvman.ie}
