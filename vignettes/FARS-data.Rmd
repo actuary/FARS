@@ -1,0 +1,60 @@
+---
+title: "FARS-data"
+output: 
+  rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{FARS-data}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+To attach the package once it is installed, just use library as normal:
+```{r setup}
+library(FARS)
+```
+
+## Purpose
+The purpose of this package is to have a go at:
+
+* uploading the FARs package to github;
+* using some CI/CD tools such as travis; 
+* writing some R unit tests; and
+* producing documentation on github.
+
+The FARS package is intended to provide an API to explore the FARS dataset. This is data from the US National Highway Traffic Safety Administration's Fatality Analysis Reporting System, which is a nationwide census providing the American public yearly data regarding fatal injuries suffered in motor vehicle traffic crashes. 
+
+## FARS Data Reading
+It also demonstrates how one might read data in using this package. Either a single year, e.g. `fars_read_years(2013)` or multiple years `fars_read_years(c(2013,2014))` can be read in. Here's an example of printing out plain R information, with the structure of the data:
+```{r data-description}
+fars_data <- FARS::fars_read_years(2013)
+
+str(fars_data)
+```
+
+## FARS Data Summarising
+We can summarise this data by years like so:
+```{r data-summary-example}
+summary_fars <- FARS::fars_summarize_years(c(2013, 2014, 2015))
+```
+
+Which generates a table of accidents per month and year.
+```{r data-summary-output, echo=FALSE}
+knitr::kable(summary_fars, "html", 
+             caption="Number of accidents by year and month.")
+```
+We can do this for any combination of available years.
+
+## FARS Data Plotting
+Lastly, we can also plot the accidents in a particular state and year as in the following code-block.
+
+```{r plot-state-info}
+fars_map_state(4, 2013)
+
+```

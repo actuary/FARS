@@ -16,7 +16,9 @@ This function returns NULL
 }
 \description{
 This function reads in the FARs data and plots the given state with each accident
-    represented by a black dot on the plot.
+represented by a black dot on the plot. User should be careful that the state number
+exists in the data and that there are accidents for that state, otherwise slight change
+will give a warning.
 }
 \examples{
 fars_map_state(1, 2013)

@@ -12,7 +12,7 @@ fars_read(filename)
 \value{
 This function returns on object of class tbl_df
     (a 'tibble') containing the data, if the filepath
-    exists.
+    exists. Errors out if given filepath does not exist.
 }
 \description{
 This function reads in FARS from the given file path,

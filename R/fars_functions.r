@@ -17,7 +17,6 @@
 #' fars_read("data\\accident_2014.csv.bz2")
 #' fars_read("data\\accident_2015.csv.bz2")
 #'
-#' @export
 #' @importFrom readr read_csv
 #' @importFrom dplyr tbl_df
 fars_read <- function(filename) {
