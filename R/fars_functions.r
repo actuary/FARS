@@ -1,5 +1,30 @@
 
 utils::globalVariables(c(".data"))
+#' This is data to be included in my package accident 2013
+#'
+#' @name accident_2013
+#' @docType data
+#' @author John J Smith, \email{fakeemail123@@duvman.ie}
+#' @keywords data
+#'
+NULL
+#' This is data to be included in my package accident 2014
+#'
+#' @name accident_2014
+#' @docType data
+#' @author John J Smith, \email{fakeemail123@@duvman.ie}
+#' @keywords data
+#'
+NULL
+#' This is data to be included in my package accident 2015
+#'
+#' @name accident_2015
+#' @docType data
+#' @author John J Smith, \email{fakeemail123@@duvman.ie}
+#' @keywords data
+#'
+NULL
+#'
 #' Read FARS data
 #'
 #' This function reads in FARS from the given file path,
